@@ -21,10 +21,7 @@
             "PATH" : "/usr/lib/sdk/rust-stable/bin:/usr/bin:/bin",
             "RUST_BACKTRACE" : "1",
             "RUST_LOG" : "zoom_ms_utility=debug"
-        },
-        "build-args" : [
-            "--share=network"
-        ]
+        }
     },
     "cleanup" : [
         "/include",
@@ -45,7 +42,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
-                    "tag" : "1.8.0"
+                    "commit" : "18286e290781d20b1919a34120cfab3065beeda0"
                 }
             ]
         },
@@ -54,10 +51,11 @@
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
+                "cargo-sources.json",
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/Edcorp844/Zoom-MS-Utility.git",
-                    "branch" : "main"
+                    "type" : "archive",
+                    "url" : "https://github.com/Edcorp844/zoommsutility/archive/refs/tags/v0.1.1.tar.gz",
+                    "sha256" : "0fd9b29a33a2000bd43c2221f010dcc2d692d2f8aef266f946b0cfc17b3e7d30"
                 }
             ]
         }

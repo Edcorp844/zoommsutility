@@ -167,7 +167,7 @@ impl Component for MainContentModel {
         };
         let widgets = view_output!();
 
-       // let patch = PatchBuffer::mock();
+        //let patch = PatchBuffer::mock();
 
        // _sender.input(MainContentModelInput::SetPatch(Some(patch), 0));
 
