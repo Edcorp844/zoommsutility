@@ -1,0 +1,53 @@
+[workspace]
+resolver = "2"
+members = ["."]
+
+[package]
+name = "zoom_ms_utility"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+# Shared dependencies
+env_logger = "0.11.11"
+log = "0.4.34"
+midir = "0.11.0"
+
+# GTK4 with Adwaita
+adw = { version = "0.9.2", package = "libadwaita", features = ["v1_8"] }
+gtk = { version = "0.11.4", package = "gtk4", features = ["v4_12"] }
+
+# Relm4
+relm4 = { version = "0.11.0", features = ["all"] }
+relm4-components = { version = "0.11.0", features = ["libadwaita", "reqwest"] }
+
+# Optional
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
+
+# Your local library - FIXED: use the correct name
+zoom_ms_utility_lib = { path = "zoom_ms_utility_lib" }
+
+[dependencies]
+# Reference workspace dependencies
+env_logger = { workspace = true }
+log = { workspace = true }
+midir = { workspace = true }
+adw = { workspace = true }
+gtk = { workspace = true }
+relm4 = { workspace = true }
+relm4-components = { workspace = true }
+gettext-rs = { workspace = true }
+zoom_ms_utility_lib = { workspace = true }  # FIXED: match the name above
+tokio = "1.53.1"
+
+# --- OPTIMIZATION PROFILES ---
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+opt-level = 3
+panic = "abort"
+strip = true

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Zoom MS Utility
+Exec=zoom_ms_utility
+Icon=io.github.edcorp844.zoommsutility
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

@@ -1,0 +1,17 @@
+[package]
+name = "zoom_ms_utility_lib"  # Must match the name referenced above
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "zoom_ms"
+path = "src/lib.rs"
+
+[dependencies]
+log = { workspace = true }
+midir = { workspace = true }
+thiserror = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[dev-dependencies]
+env_logger = { workspace = true }
