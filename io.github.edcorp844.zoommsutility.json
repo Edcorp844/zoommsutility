@@ -55,8 +55,9 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "dir",
-                    "path" : "/home/frost/Projects/zoom_ms_utility"
+                    "type" : "git",
+                    "url" : "https://github.com/Edcorp844/Zoom-MS-Utility.git",
+                    "branch" : "main"
                 }
             ]
         }
