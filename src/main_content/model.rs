@@ -1,3 +1,23 @@
+/* main_content/model.rs
+ *
+ * Copyright 2026 Frost
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 use crate::components::{
     effect_dock_component::{
         EffectDockComponentAction, EffectDockComponentInput, EffectDockComponentModel,
@@ -167,9 +187,11 @@ impl Component for MainContentModel {
         };
         let widgets = view_output!();
 
-        //let patch = PatchBuffer::mock();
-
-       // _sender.input(MainContentModelInput::SetPatch(Some(patch), 0));
+        //  We can use data moks for ui implementation here.
+        //  Only to be used for testing
+        //
+        //  let patch = PatchBuffer::mock();```
+        //  _sender.input(MainContentModelInput::SetPatch(Some(patch), 0));
 
         ComponentParts { model, widgets }
     }

@@ -42,7 +42,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
-                    "commit" : "18286e290781d20b1919a34120cfab3065beeda0"
+                    "tag" : "1.8.0"
                 }
             ]
         },
@@ -54,8 +54,8 @@
                 "cargo-sources.json",
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/Edcorp844/zoommsutility/archive/refs/tags/v0.1.1.tar.gz",
-                    "sha256" : "0fd9b29a33a2000bd43c2221f010dcc2d692d2f8aef266f946b0cfc17b3e7d30"
+                    "url" : "https://github.com/Edcorp844/zoommsutility/archive/refs/tags/v0.1.2.tar.gz",
+                    "sha256" : "9e28118b5615db7062ec6b7cf3945cb7f786f1004a1d8c5f2a9a1b9c2f2f5557"
                 }
             ]
         }

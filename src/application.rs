@@ -1,3 +1,23 @@
+/* application.rs
+ *
+ * Copyright 2026 Frost
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 use gtk::{gdk, gio};
 use log::{error, info};
 use relm4::adw::prelude::*;
@@ -7,8 +27,6 @@ use relm4::ComponentParts;
 use zoom_ms::model::PedalModel;
 use zoom_ms::patch_buffer::PatchBuffer;
 
-use crate::components::main_menu_button;
-use crate::components::main_menu_button::MainMenuButton;
 use crate::main_content::model::MainContentModel;
 use crate::main_content::model::MainContentModelInput;
 use crate::main_content::model::MainContentModelOutput;
@@ -17,7 +35,6 @@ use crate::workers::zoom_client_worker::{
 };
 
 pub struct ApplicationModel {
-    main_menu_button_controller: Controller<MainMenuButton>,
     zoom_client_worker_controller: Controller<ZoomClientWorker>,
     main_content_controller: Controller<MainContentModel>,
     available_ports: Vec<String>,
@@ -115,8 +132,6 @@ impl Component for ApplicationModel {
                     set_child = &adw::ToolbarView {
                         add_top_bar = &adw::HeaderBar {
                             set_show_title: false,
-
-                            pack_end = model.main_menu_button_controller.widget(),
                         },
 
                         #[wrap(Some)]
@@ -318,10 +333,7 @@ impl Component for ApplicationModel {
             },
         );
 
-        let main_menu_button_controller = MainMenuButton::builder().launch(()).detach();
-
         let model = Self {
-            main_menu_button_controller,
             zoom_client_worker_controller,
             main_content_controller,
             available_ports: Vec::new(),

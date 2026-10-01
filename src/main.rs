@@ -19,7 +19,6 @@
  */
 
 mod application;
-mod application_menu;
 mod components;
 mod config;
 mod main_content;
@@ -33,8 +32,6 @@ use config::{APPLICATION_ID, GETTEXT_PACKAGE, LOCALEDIR, PKGDATADIR};
 use gettextrs::{bind_textdomain_codeset, bindtextdomain, textdomain};
 use gtk::gio;
 use relm4::RelmApp;
-
-use crate::application_menu::ApplicationMenu;
 fn main() {
     let _ = env_logger::builder()
         .filter_level(log::LevelFilter::Info)
@@ -45,9 +42,6 @@ fn main() {
     bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8")
         .expect("Unable to set the text domain encoding");
     textdomain(GETTEXT_PACKAGE).expect("Unable to switch to the text domain");
-
-    let app_menu = ApplicationMenu::new();
-    app_menu.register();
 
     let app = RelmApp::new(APPLICATION_ID);
 
